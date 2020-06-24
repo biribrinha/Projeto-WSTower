@@ -1,7 +1,3 @@
-USE master
-GO
---DROP DATABASE IF EXISTS Campeonato
-GO
 CREATE DATABASE Campeonato
 GO
 USE Campeonato
