@@ -27,6 +27,7 @@ namespace WSTowerApi.Contexts
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-4EGEC9A\\SQLEXPRESS; Initial Catalog=Campeonato; Integrated Security=true;");
+                //optionsBuilder.UseSqlServer("Data Source=DESKTOP_PCH001\\SQLEXPRESS; Initial Catalog=Campeonato; Integrated Security=true;");
             }
         }
 
