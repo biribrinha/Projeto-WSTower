@@ -8792,25 +8792,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paulo\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\PICHAU\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
+      "projectUniqueName": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
       "projectName": "WSTowerApi",
-      "projectPath": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
-      "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\obj\\",
+      "projectPath": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
+      "packagesPath": "C:\\Users\\PICHAU\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\PICHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8896,7 +8895,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

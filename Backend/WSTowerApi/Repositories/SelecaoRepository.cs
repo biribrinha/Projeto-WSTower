@@ -14,14 +14,14 @@ namespace WSTowerApi.Repositories
     {
         WSTowerApiContext ctx = new WSTowerApiContext();
 
-        public void Atualizar(int id, Selecao selecaoNova)
+        public void Atualizar(int id, Selecao selecaoAtualizada)
         {
             Selecao selecaoBuscada = ctx.Selecao.Find(id);
 
-            selecaoBuscada.Nome = selecaoNova.Nome;
-            selecaoBuscada.Bandeira = selecaoNova.Bandeira;
-            selecaoBuscada.Uniforme = selecaoNova.Uniforme;
-            selecaoBuscada.Escalacao = selecaoNova.Escalacao;
+            selecaoBuscada.Nome = selecaoAtualizada.Nome;
+            selecaoBuscada.Bandeira = selecaoAtualizada.Bandeira;
+            selecaoBuscada.Uniforme = selecaoAtualizada.Uniforme;
+            selecaoBuscada.Escalacao = selecaoAtualizada.Escalacao;
 
             ctx.Selecao.Update(selecaoBuscada);
 

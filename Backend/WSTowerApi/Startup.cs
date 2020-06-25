@@ -21,7 +21,8 @@ namespace WSTowerApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services
+            services.AddControllers(options => options.EnableEndpointRouting = false);
+            services.AddOptions()
                 // Adiciona o MVC ao projeto
                 .AddMvc()
 

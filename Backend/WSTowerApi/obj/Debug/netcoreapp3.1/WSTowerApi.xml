@@ -4,6 +4,59 @@
         <name>WSTowerApi</name>
     </assembly>
     <members>
+        <member name="M:WSTowerApi.Controller.SelecaoController.Get">
+            <summary>
+            Lista todos as seleções
+            </summary>
+            <returns>Uma lista de seleções e um status code 200 - Ok</returns>
+            <response code="200">Retorna uma lista de seleções</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Selecoes
+        </member>
+        <member name="M:WSTowerApi.Controller.SelecaoController.GetById(System.Int32)">
+            <summary>
+            Busca uma seleção através do ID
+            </summary>
+            <param name="id">ID da seleção que será buscado</param>
+            <returns>Uma seleção buscada e um status code 200 - Ok</returns>
+            <response code="200">Retorna a seleção buscada</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Selecoes/id
+        </member>
+        <member name="M:WSTowerApi.Controller.SelecaoController.Post(WSTowerApi.Domains.Selecao)">
+            <summary>
+            Cadastra uma nova selecao
+            </summary>
+            <param name="selecaoNova">Objeto com as informações</param>
+            <returns>Um status code 201 - Created</returns>
+            <response code="201">Retorna apenas o status code Created</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Selecoes
+        </member>
+        <member name="M:WSTowerApi.Controller.SelecaoController.Put(System.Int32,WSTowerApi.Domains.Selecao)">
+            <summary>
+            Atualiza uma selecao existente
+            </summary>
+            <param name="id">ID da seleção que será atualizado</param>
+            <param name="selecaoAtualizada">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+            <response code="204">Retorna apenas o status code No Content</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Eventos/id
+        </member>
+        <member name="M:WSTowerApi.Controller.SelecaoController.Delete(System.Int32)">
+            <summary>
+            Deleta uma selecao
+            </summary>
+            <param name="id">ID da selecao que será deletada</param>
+            <returns>Um status code 202 - Accepted</returns>
+            <response code="202">Retorna apenas o status code Accepted</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Selecoes/id
+        </member>
         <member name="P:WSTowerApi.Controllers.LoginController._usuarioRepository">
             <summary>
             Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
@@ -23,6 +76,39 @@
             <response code="200">Retorna o token gerado</response>
             <response code="400">Retorna o erro gerado com uma mensagem personalizada</response>
             dominio/api/Login
+        </member>
+        <member name="M:WSTowerApi.Controllers.UsuarioController.Post(WSTowerApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+            <param name="novoUsuario">Objeto com as informações</param>
+            <returns>Um status code 201 - Created</returns>
+            <response code="201">Retorna apenas o status code Created</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Usuarios
+        </member>
+        <member name="M:WSTowerApi.Controllers.UsuarioController.Put(System.Int32,WSTowerApi.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+            <response code="204">Retorna apenas o status code No Content</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Usuarios/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuário
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+            <response code="202">Retorna apenas o status code Accepted</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Usuarios/id
         </member>
     </members>
 </doc>

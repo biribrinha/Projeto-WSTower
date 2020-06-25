@@ -13,7 +13,6 @@ namespace WSTowerApi.Repositories
     {
         WSTowerApiContext ctx = new WSTowerApiContext();
 
-        
         public Usuario Login(string email, string apelido, string senha)
         {
             Usuario usuarioBuscado = ctx.Usuario
@@ -57,6 +56,11 @@ namespace WSTowerApi.Repositories
             ctx.Usuario.Remove(usuarioBuscado);
 
             ctx.SaveChanges();
+        }
+
+        Usuario IUsuarioRepository.ListarPorId(int id)
+        {
+            return ctx.Usuario.FirstOrDefault(s => s.Id == id);
         }
     }
 }
