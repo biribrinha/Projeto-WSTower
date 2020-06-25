@@ -48,8 +48,13 @@ namespace WSTowerApi.Repositories
 
         public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
         {
-            return ctx.Selecao.Include(s => s.Jogador).OrderByDescending(s => s.Jogador.);
+            throw new NotImplementedException();
         }
+
+        //public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
+        //{
+        //    //return ctx.Selecao.Include(s => s.Jogador).OrderByDescending(s => s.Jogador.);
+        //}
 
         public List<Selecao> ListarJogadoresPorSelecao(int idSelecao)
         {

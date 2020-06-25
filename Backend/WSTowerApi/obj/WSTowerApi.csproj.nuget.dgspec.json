@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj": {}
+    "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj": {
+    "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
+        "projectUniqueName": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
         "projectName": "WSTowerApi",
-        "projectPath": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
-        "packagesPath": "C:\\Users\\PICHAU\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PICHAU\\Desktop\\Projeto-WSTower\\Backend\\WSTowerApi\\obj\\",
+        "projectPath": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\WSTowerApi.csproj",
+        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paulo\\OneDrive\\Área de Trabalho\\Projeto-WSTower\\Backend\\WSTowerApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\PICHAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -41,10 +42,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "target": "Package",
-              "version": "[2.2.8, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.5, )"
@@ -108,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
