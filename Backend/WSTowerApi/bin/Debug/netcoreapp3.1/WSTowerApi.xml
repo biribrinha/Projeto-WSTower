@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WSTowerApi</name>
+    </assembly>
+    <members>
+        <member name="P:WSTowerApi.Controllers.LoginController._usuarioRepository">
+            <summary>
+            Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:WSTowerApi.Controllers.LoginController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:WSTowerApi.Controllers.LoginController.Post(WSTowerApi.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            <response code="200">Retorna o token gerado</response>
+            <response code="400">Retorna o erro gerado com uma mensagem personalizada</response>
+            dominio/api/Login
+        </member>
+    </members>
+</doc>
