@@ -13,5 +13,8 @@ namespace WSTowerApi.Interfaces
         public void Cadastrar(Selecao selecaoNova);
         public void Remover(int id);
         public void Atualizar(int id, Selecao selecaoNova);
+        public List<Selecao> ListarJogadoresPorSelecao(int idSelecao);
+        public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao);
+        public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao);
     }
 }
