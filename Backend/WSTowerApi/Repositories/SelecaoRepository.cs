@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WSTowerApi.Repositories
 {
@@ -32,6 +33,27 @@ namespace WSTowerApi.Repositories
             ctx.Selecao.Add(selecaoNova);
 
             ctx.SaveChanges();
+        }
+
+        public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao)
+        {
+            //Selecao selecaoSelecionada = new Selecao();
+            //foreach (var jogador in selecaoSelecionada.Jogadores)
+            //{
+                
+            //}
+
+            return ctx.Selecao.Include(s => s.Jogador).OrderBy(s => s.Jogador).Where(s => s.Id == idSelecao).ToList();
+        }
+
+        public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
+        {
+            return ctx.Selecao.Include(s => s.Jogador).OrderByDescending(s => s.Jogador.);
+        }
+
+        public List<Selecao> ListarJogadoresPorSelecao(int idSelecao)
+        {
+            return ctx.Selecao.Include(s => s.Jogador).Where(s => s.Id == idSelecao).ToList();
         }
 
         public Selecao ListarPorId(int id)
