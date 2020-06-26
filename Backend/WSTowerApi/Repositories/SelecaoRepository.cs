@@ -63,13 +63,13 @@ namespace WSTowerApi.Repositories
                         Selecao selecao = new Selecao
                         {
                             Nome = rdr["Nome"].ToString(),
-                            Bandeira = Convert.ToByte(rdr["Banderira"]),
+                           // Bandeira = Convert.ToByte(rdr["Banderira"]),
 
                             Jogador = new Jogador
                             {
                                 Nome = rdr["Nome"].ToString(),
-                                Foto = rdr["Foto"].ToByte(),
-                                Posicao = rdr["Posicao"],
+                                //Foto = rdr["Foto"].ToByte(),
+                                Posicao = Convert.ToString(rdr["Posicao"]),
                             }
 
                         };
