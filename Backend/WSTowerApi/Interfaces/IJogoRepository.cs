@@ -12,7 +12,10 @@ namespace WSTowerApi.Interfaces
 
         public Jogo ListarPorId(int id);
 
-        public List<Jogo> ListarPorData(DateTime dataJogo);
+        public Jogo ListarPorData(DateTime dataJogo);
+
+        public Jogo ListarPorEstadio(string estadio);
+        List<Jogo> ListarJogosPorSelecao();
 
         public void CadastrarJogo(Jogo novoJogo);
 
@@ -20,6 +23,6 @@ namespace WSTowerApi.Interfaces
 
         public void RemoverJogo(int id);
 
-        List<Jogo> ListarJogosPorSelecao();
+        
      }
 }

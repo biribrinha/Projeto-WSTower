@@ -17,6 +17,26 @@ namespace WSTowerApi.Repositories
 
         private string stringConexao = "Data Source=DESKTOP-4EGEC9A\\SQLEXPRESS; Initial Catalog=Campeonato; Integrated Security=true;";
 
+        public List<Selecao> ListarTodos()
+        {
+            return ctx.Selecao.ToList();
+        }
+
+        public Selecao ListarPorId(int id)
+        {
+            return ctx.Selecao.FirstOrDefault(s => s.Id == id);
+        }
+
+        public List<Selecao> ListarJogadoresPorSelecao(int idSelecao)
+        {
+            return ctx.Selecao.Include(s => s.Jogador).Where(s => s.Id == idSelecao).ToList();
+        }
+
+        public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Atualizar(int id, Selecao selecaoNova)
         {
             Selecao selecaoBuscada = ctx.Selecao.Find(id);
@@ -38,75 +58,55 @@ namespace WSTowerApi.Repositories
             ctx.SaveChanges();
         }
 
-        public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao)
-        {
-            List<Selecao> selecoes = new List<Selecao>();
+        //public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao)
+        //{
+        //    List<Selecao> selecoes = new List<Selecao>();
 
-            using (SqlConnection con = new SqlConnection(stringConexao))
-            {
-                string querySelect = "SELECT S.Nome, S.Bandeira, J.Nome, J.Foto, J.Posicao FROM Selecao S" +
-                                     "INNER JOIN Jogador J" +
-                                     "ON S.Id = J.SelecaoID" +
-                                     "WHERE S.Id = @ID" +
-                                     "ORDER BY J.Nome ASC;";
+        //    using (SqlConnection con = new SqlConnection(stringConexao))
+        //    {
+        //        string querySelect = "SELECT S.Nome, S.Bandeira, J.Nome, J.Foto, J.Posicao FROM Selecao S" +
+        //                             "INNER JOIN Jogador J" +
+        //                             "ON S.Id = J.SelecaoID" +
+        //                             "WHERE S.Id = @ID" +
+        //                             "ORDER BY J.Nome ASC;";
 
-                con.Open();
+        //        con.Open();
 
-                using (SqlCommand cmd = new SqlCommand(querySelect, con))
-                {
-                    cmd.Parameters.AddWithValue("@ID", idSelecao);
+        //        using (SqlCommand cmd = new SqlCommand(querySelect, con))
+        //        {
+        //            cmd.Parameters.AddWithValue("@ID", idSelecao);
 
-                    SqlDataReader rdr = cmd.ExecuteReader();
+        //            SqlDataReader rdr = cmd.ExecuteReader();
 
-                    while (rdr.Read())
-                    {
-                        Selecao selecao = new Selecao
-                        {
-                            Nome = rdr["Nome"].ToString(),
-                           // Bandeira = Convert.ToByte(rdr["Banderira"]),
+        //            while (rdr.Read())
+        //            {
+        //                Selecao selecao = new Selecao
+        //                {
+        //                    Nome = rdr["Nome"].ToString(),
+        //                   // Bandeira = Convert.ToByte(rdr["Banderira"]),
 
-                            Jogador = new Jogador
-                            {
-                                Nome = rdr["Nome"].ToString(),
-                                //Foto = rdr["Foto"].ToByte(),
-                                Posicao = Convert.ToString(rdr["Posicao"]),
-                            }
+        //                    Jogador = new Jogador
+        //                    {
+        //                        Nome = rdr["Nome"].ToString(),
+        //                        //Foto = rdr["Foto"].ToByte(),
+        //                        Posicao = Convert.ToString(rdr["Posicao"]),
+        //                    }
 
-                        };
+        //                };
 
-                        selecoes.Add(selecao);
-                    }
-                }
-            }
+        //                selecoes.Add(selecao);
+        //            }
+        //        }
+        //    }
 
-            return selecoes;
+           // return selecoes;
             //return ctx.Selecao.Include(s => s.Jogador).OrderBy(s => s.Jogador).Where(s => s.Id == idSelecao).ToList();
-        }
-
-        public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
-        {
-            throw new NotImplementedException();
-        }
+        //}
 
         //public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao)
         //{
         //    //return ctx.Selecao.Include(s => s.Jogador).OrderByDescending(s => s.Jogador.);
         //}
-
-        public List<Selecao> ListarJogadoresPorSelecao(int idSelecao)
-        {
-            return ctx.Selecao.Include(s => s.Jogadores).Where(s => s.Id == idSelecao).ToList();
-        }
-
-        public Selecao ListarPorId(int id)
-        {
-            return ctx.Selecao.FirstOrDefault(s => s.Id == id);
-        }
-
-        public List<Selecao> ListarTodos()
-        {
-            return ctx.Selecao.ToList();
-        }
 
         public void Remover(int id)
         {

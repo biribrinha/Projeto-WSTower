@@ -74,6 +74,35 @@ namespace WSTowerApi.Controllers
         }
 
         /// <summary>
+        /// Busca um jogo através do estadio
+        /// </summary>
+        /// <param name="estadio">estadio do jogo que será buscado</param>
+        /// <returns>Um jogo buscado e um status code 200 - Ok</returns>
+        /// <response code="200">Retorna um jogo buscado</response>
+        /// <response code="404">Retorna uma mensagem de erro</response>
+        /// <response code="400">Retorna o erro gerado</response>
+        /// dominio/api/jogos/id
+        [HttpGet("{Estadio}")]
+        public IActionResult GetEstadio(string estadio)
+        {
+            try
+            {
+                Jogo jogoBuscado = _jogoRepository.ListarPorEstadio(estadio);
+
+                if (jogoBuscado != null)
+                {
+                    return Ok(jogoBuscado);
+                }
+
+                return NotFound("Nenhum jogo encontrado para o estadio informado");
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+        /// <summary>
         /// Busca um jogo através da data
         /// </summary>
         /// <param name="dataJogo">data do jogo que será buscado</param>
@@ -87,7 +116,7 @@ namespace WSTowerApi.Controllers
         {
             try
             {
-                List<Jogo> jogosBuscados = _jogoRepository.ListarPorData(dataJogo);
+                Jogo jogosBuscados = _jogoRepository.ListarPorData(dataJogo);
 
                 if (jogosBuscados != null)
                 {

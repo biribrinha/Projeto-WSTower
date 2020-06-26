@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,32 +13,21 @@ namespace WSTowerApi.Repositories
     {
         WSTowerApiContext ctx = new WSTowerApiContext();
 
-        public void Atualizar(int id, Jogador jogadorNovo)
+        public List<Jogador> ListarTodos()
         {
-            Jogador jogadorBuscado = ctx.Jogador.Find(id);
-
-            jogadorBuscado.Nome = jogadorNovo.Nome;
-            jogadorBuscado.Nascimento = jogadorNovo.Nascimento;
-            jogadorBuscado.Posicao = jogadorNovo.Posicao;
-            jogadorBuscado.Qtdefaltas = jogadorNovo.Qtdefaltas;
-            jogadorBuscado.QtdecartoesAmarelo = jogadorNovo.QtdecartoesAmarelo;
-            jogadorBuscado.QtdecartoesVermelho = jogadorNovo.QtdecartoesVermelho;
-            jogadorBuscado.Qtdegols = jogadorNovo.Qtdegols;
-            jogadorBuscado.Informacoes = jogadorNovo.Informacoes;
-            jogadorBuscado.NumeroCamisa = jogadorNovo.NumeroCamisa;
-            jogadorBuscado.Foto = jogadorNovo.Foto;
-            jogadorBuscado.SelecaoId = jogadorNovo.SelecaoId;
-
-            ctx.Jogador.Update(jogadorBuscado);
-
-            ctx.SaveChanges();
+            return ctx.Jogador.ToList();
         }
 
-        public void Cadastrar(Jogador jogadorNovo)
+        public Jogador ListarPorNome(string nome)
         {
-            ctx.Jogador.Add(jogadorNovo);
+            return ctx.Jogador.FirstOrDefault(j => j.Nome == nome);
+        }
 
-            ctx.SaveChanges();
+        
+        public List<Jogador> ListarUmaSelecao(int id)
+        {
+
+            return ctx.Jogador.Include(j => j.SelecaoId == id).ToList();
         }
 
         public Jogador ListarPorId(int id)
@@ -45,9 +35,32 @@ namespace WSTowerApi.Repositories
             return ctx.Jogador.FirstOrDefault(j => j.Id == id);
         }
 
-        public List<Jogador> ListarTodos()
+        public void Cadastrar(Jogador novoJogador)
         {
-            return ctx.Jogador.ToList();
+            ctx.Jogador.Add(novoJogador);
+
+            ctx.SaveChanges();
+        }
+
+        public void Atualizar(int id, Jogador jogadorAtualizado)
+        {
+            Jogador jogadorBuscado = ctx.Jogador.Find(id);
+
+            jogadorBuscado.Nome = jogadorAtualizado.Nome;
+            jogadorBuscado.Nascimento = jogadorAtualizado.Nascimento;
+            jogadorBuscado.Posicao = jogadorAtualizado.Posicao;
+            jogadorBuscado.Qtdefaltas = jogadorAtualizado.Qtdefaltas;
+            jogadorBuscado.QtdecartoesAmarelo = jogadorAtualizado.QtdecartoesAmarelo;
+            jogadorBuscado.QtdecartoesVermelho = jogadorAtualizado.QtdecartoesVermelho;
+            jogadorBuscado.Qtdegols = jogadorAtualizado.Qtdegols;
+            jogadorBuscado.Informacoes = jogadorAtualizado.Informacoes;
+            jogadorBuscado.NumeroCamisa = jogadorAtualizado.NumeroCamisa;
+            jogadorBuscado.Foto = jogadorAtualizado.Foto;
+            jogadorBuscado.SelecaoId = jogadorAtualizado.SelecaoId;
+
+            ctx.Jogador.Update(jogadorBuscado);
+
+            ctx.SaveChanges();
         }
 
         public void Remover(int id)
@@ -58,5 +71,6 @@ namespace WSTowerApi.Repositories
 
             ctx.SaveChanges();
         }
+
     }
 }

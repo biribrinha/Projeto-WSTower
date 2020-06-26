@@ -23,10 +23,21 @@ namespace WSTowerApi.Repositories
             return ctx.Jogo.FirstOrDefault(j => j.Id == id);
         }
 
-        public List<Jogo> ListarPorData(DateTime dataJogo)
+        public Jogo ListarPorEstadio(string estadio)
         {
-            return ctx.Jogo.Where(j => j.Data == dataJogo).ToList();
+            return ctx.Jogo.FirstOrDefault(j => j.Estadio == estadio);
         }
+
+        public Jogo ListarPorData(DateTime dataJogo)
+        {
+            return ctx.Jogo.FirstOrDefault(j => j.Data == dataJogo);
+        }
+
+        public List<Jogo> ListarJogosPorSelecao()
+        {
+            return ctx.Jogo.Include(e => e.SelecaoCasaNavigation).ToList();
+        }
+
 
         public void CadastrarJogo(Jogo novoJogo)
         {
@@ -60,11 +71,6 @@ namespace WSTowerApi.Repositories
             ctx.Remove(jogoBuscado);
 
             ctx.SaveChanges();
-        }
-
-        public List<Jogo> ListarJogosPorSelecao()
-        {
-            return ctx.Jogo.Include(e => e.SelecaoCasaNavigation).ToList();
         }
 
     }

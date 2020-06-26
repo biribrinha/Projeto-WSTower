@@ -4,6 +4,70 @@
         <name>WSTowerApi</name>
     </assembly>
     <members>
+        <member name="M:WSTowerApi.Controller.JogadorController.Get">
+            <summary>
+            Lista todos os jogadores
+            </summary>
+            <returns>Uma lista de jogadores e um status code 200 - Ok</returns>
+            <response code="200">Retorna uma lista de seleções</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogadores
+        </member>
+        <member name="M:WSTowerApi.Controller.JogadorController.GetById(System.String)">
+            <summary>
+            Busca um jogador através do nome
+            </summary>
+            <param name="nome">nome do jogador que será buscado</param>
+            <returns>Um jogo buscado e um status code 200 - Ok</returns>
+            <response code="200">Retorna um jogo buscado</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogador/id
+        </member>
+        <member name="M:WSTowerApi.Controller.JogadorController.GetByIdSelecao(System.Int32)">
+            <summary>
+            Busca todos jogadores através de uma selecao
+            </summary>
+            <param name="id">Id da selecao que será buscado</param>
+            <returns>Uma selecao buscada e um status code 200 - Ok</returns>
+            <response code="200">Retorna um jogo buscado</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogador/id
+        </member>
+        <member name="M:WSTowerApi.Controller.JogadorController.Post(WSTowerApi.Domains.Jogador)">
+            <summary>
+            Cadastra um novo jogador
+            </summary>
+            <param name="novoJogador">Objeto com as informações</param>
+            <returns>Um status code 201 - Created</returns>
+            <response code="201">Retorna apenas o status code Created</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogos
+        </member>
+        <member name="M:WSTowerApi.Controller.JogadorController.Put(System.Int32,WSTowerApi.Domains.Jogador)">
+            <summary>
+            Atualiza um jogador existente
+            </summary>
+            <param name="id">ID do jogador que será atualizado</param>
+            <param name="jogadorAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+            <response code="204">Retorna apenas o status code No Content</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogador/id
+        </member>
+        <member name="M:WSTowerApi.Controller.JogadorController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogador
+            </summary>
+            <param name="id">ID do jogador que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+            <response code="202">Retorna apenas o status code Accepted</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogador/id
+        </member>
         <member name="M:WSTowerApi.Controller.SelecaoController.Get">
             <summary>
             Lista todos as seleções
@@ -57,6 +121,87 @@
             <response code="400">Retorna o erro gerado</response>
             dominio/api/Selecoes/id
         </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.Get">
+            <summary>
+            Lista todos os jogos
+            </summary>
+            <returns>Uma lista de jogos e um status code 200 - Ok</returns>
+            <response code="200">Retorna uma lista de seleções</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogo
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.GetById(System.Int32)">
+            <summary>
+            Busca um jogo através do ID
+            </summary>
+            <param name="id">ID do jogo que será buscado</param>
+            <returns>Um jogo buscado e um status code 200 - Ok</returns>
+            <response code="200">Retorna um jogo buscado</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogos/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.GetEstadio(System.String)">
+            <summary>
+            Busca um jogo através do estadio
+            </summary>
+            <param name="estadio">estadio do jogo que será buscado</param>
+            <returns>Um jogo buscado e um status code 200 - Ok</returns>
+            <response code="200">Retorna um jogo buscado</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogos/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.GetData(System.DateTime)">
+            <summary>
+            Busca um jogo através da data
+            </summary>
+            <param name="dataJogo">data do jogo que será buscado</param>
+            <returns>Um jogo buscado e um status code 200 - Ok</returns>
+            <response code="200">Retorna um jogo buscado</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogos/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.Post(WSTowerApi.Domains.Jogo)">
+            <summary>
+            Cadastra um novo jogo
+            </summary>
+            <param name="novoJogo">Objeto com as informações</param>
+            <returns>Um status code 201 - Created</returns>
+            <response code="201">Retorna apenas o status code Created</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/jogos
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.Put(System.Int32,WSTowerApi.Domains.Jogo)">
+            <summary>
+            Atualiza um jogo existente
+            </summary>
+            <param name="id">ID do jogo que será atualizado</param>
+            <param name="jogoAtualizado">Objeto com as novas informações</param>
+            <returns>Um status code 204 - No Content</returns>
+            <response code="204">Retorna apenas o status code No Content</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogos/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.Delete(System.Int32)">
+            <summary>
+            Deleta um jogo
+            </summary>
+            <param name="id">ID do jogo que será deletado</param>
+            <returns>Um status code 202 - Accepted</returns>
+            <response code="202">Retorna apenas o status code Accepted</response>
+            <response code="404">Retorna uma mensagem de erro</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Jogos/id
+        </member>
+        <member name="M:WSTowerApi.Controllers.JogoController.GetSelecao">
+            <summary>
+            Lista todos os jogos com as informações das Selecoes
+            </summary>
+            <returns>Uma lista de jogos</returns>
+        </member>
         <member name="P:WSTowerApi.Controllers.LoginController._usuarioRepository">
             <summary>
             Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
@@ -76,6 +221,15 @@
             <response code="200">Retorna o token gerado</response>
             <response code="400">Retorna o erro gerado com uma mensagem personalizada</response>
             dominio/api/Login
+        </member>
+        <member name="M:WSTowerApi.Controllers.UsuarioController.Get">
+            <summary>
+            Lista todos os usuarios
+            </summary>
+            <returns>Uma lista de usuarios e um status code 200 - Ok</returns>
+            <response code="200">Retorna uma lista de seleções</response>
+            <response code="400">Retorna o erro gerado</response>
+            dominio/api/Selecoes
         </member>
         <member name="M:WSTowerApi.Controllers.UsuarioController.Post(WSTowerApi.Domains.Usuario)">
             <summary>

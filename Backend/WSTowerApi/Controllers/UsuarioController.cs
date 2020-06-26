@@ -25,6 +25,26 @@ namespace WSTowerApi.Controllers
         }
 
         /// <summary>
+        /// Lista todos os usuarios
+        /// </summary>
+        /// <returns>Uma lista de usuarios e um status code 200 - Ok</returns>
+        /// <response code="200">Retorna uma lista de seleções</response>
+        /// <response code="400">Retorna o erro gerado</response>
+        /// dominio/api/Selecoes
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                return Ok(_usuarioRepository.ListarUsuario());
+            }
+            catch (Exception error)
+            {
+                return BadRequest(error);
+            }
+        }
+
+        /// <summary>
         /// Cadastra um novo usuario
         /// </summary>
         /// <param name="novoUsuario">Objeto com as informações</param>
@@ -57,7 +77,7 @@ namespace WSTowerApi.Controllers
         /// <response code="404">Retorna uma mensagem de erro</response>
         /// <response code="400">Retorna o erro gerado</response>
         /// dominio/api/Usuarios/id
-        [HttpPut]
+        [HttpPut ("{id}")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
         {
             try

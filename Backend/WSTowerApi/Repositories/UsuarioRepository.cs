@@ -13,18 +13,22 @@ namespace WSTowerApi.Repositories
     {
         WSTowerApiContext ctx = new WSTowerApiContext();
 
-        public Usuario Login(string email, string apelido, string senha)
+
+        public List<Usuario> ListarUsuario()
         {
-            Usuario usuarioBuscado = ctx.Usuario
-              
-            .FirstOrDefault(u => u.Email == email || u.Apelido == apelido && u.Senha == senha);
+            return ctx.Usuario.ToList();
+        }
 
-            if (usuarioBuscado != null)
-            {
-                return usuarioBuscado;
-            }
+        Usuario IUsuarioRepository.ListarPorId(int id)
+        {
+            return ctx.Usuario.FirstOrDefault(s => s.Id == id);
+        }
 
-            return null;
+        public void Cadastrar(Usuario novoUsuario)
+        {
+            ctx.Usuario.Add(novoUsuario);
+
+            ctx.SaveChanges();
         }
 
         public void Atualizar(int id, Usuario usuarioAtualizado)
@@ -42,13 +46,6 @@ namespace WSTowerApi.Repositories
             ctx.SaveChanges();
         }
 
-        public void Cadastrar(Usuario novoUsuario)
-        {
-            ctx.Usuario.Add(novoUsuario);
-
-            ctx.SaveChanges();
-        }
-
         public void Remover(int id)
         {
             Usuario usuarioBuscado = ctx.Usuario.Find(id);
@@ -58,9 +55,20 @@ namespace WSTowerApi.Repositories
             ctx.SaveChanges();
         }
 
-        Usuario IUsuarioRepository.ListarPorId(int id)
+
+        public Usuario Login(string email, string apelido, string senha)
         {
-            return ctx.Usuario.FirstOrDefault(s => s.Id == id);
+            Usuario usuarioBuscado = ctx.Usuario
+
+            .FirstOrDefault(u => u.Email == email || u.Apelido == apelido && u.Senha == senha);
+
+            if (usuarioBuscado != null)
+            {
+                return usuarioBuscado;
+            }
+
+            return null;
         }
+
     }
 }

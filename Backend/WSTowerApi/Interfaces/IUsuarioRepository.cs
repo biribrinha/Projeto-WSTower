@@ -8,11 +8,12 @@ namespace WSTowerApi.Interfaces
 {
     interface IUsuarioRepository
     {
-        public Usuario ListarPorId(int id);
-        Usuario Login(string email, string apelido, string senha);
+        public List<Usuario> ListarUsuario();
+        public Usuario ListarPorId(int id);     
         public void Cadastrar(Usuario novoUsuario);
         public void Remover(int id);
         public void Atualizar(int id, Usuario usuarioAtualizado);
+        Usuario Login(string email, string apelido, string senha);
 
     }
 }

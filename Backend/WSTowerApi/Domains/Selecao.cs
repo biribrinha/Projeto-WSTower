@@ -7,7 +7,7 @@ namespace WSTowerApi.Domains
     {
         public Selecao()
         {
-            Jogadores = new HashSet<Jogador>();
+            Jogador = new HashSet<Jogador>();
             JogoSelecaoCasaNavigation = new HashSet<Jogo>();
             JogoSelecaoVisitanteNavigation = new HashSet<Jogo>();
         }
@@ -18,10 +18,9 @@ namespace WSTowerApi.Domains
         public byte[] Uniforme { get; set; }
         public string Escalacao { get; set; }
 
-        public virtual ICollection<Jogador> Jogadores { get; set; }
+        public virtual ICollection<Jogador> Jogador { get; set; }
         public virtual ICollection<Jogo> JogoSelecaoCasaNavigation { get; set; }
         public virtual ICollection<Jogo> JogoSelecaoVisitanteNavigation { get; set; }
 
-        public Jogador Jogador { get; set; }
     }
 }

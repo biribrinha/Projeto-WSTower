@@ -14,7 +14,7 @@ namespace WSTowerApi.Interfaces
         public void Remover(int id);
         public void Atualizar(int id, Selecao selecaoAtualizada);
         public List<Selecao> ListarJogadoresPorSelecao(int idSelecao);
-        public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao);
+       // public List<Selecao> ListarJogadoresOrdemAlfabetica(int idSelecao);
         public List<Selecao> ListarJogadoresOrdemDecrescente(int idSelecao);
     }
 }
