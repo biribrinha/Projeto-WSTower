@@ -200,8 +200,6 @@ C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3
 C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\WSTowerApi.xml
-C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.xml
 C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.xml
@@ -280,3 +278,8 @@ C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\bin
 C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\paulo\OneDrive\Área de Trabalho\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PICHAU\Desktop\Projeto-WSTower\Backend\WSTowerApi\obj\Debug\netcoreapp3.1\WSTowerApi.MvcApplicationPartsAssemblyInfo.cache

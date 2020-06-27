@@ -10,8 +10,10 @@ using WSTowerApi.Repositories;
 
 namespace WSTowerApi.Controller
 {
-    [Route("api/[controller]")]
     [Produces("application/json")]
+
+    [Route("api/[controller]")]
+    
     [ApiController]
     public class JogadorController : ControllerBase
     {
@@ -52,7 +54,7 @@ namespace WSTowerApi.Controller
         /// <response code="400">Retorna o erro gerado</response>
         /// dominio/api/jogador/id
         [HttpGet("{Nome}")]
-        public IActionResult GetById(string nome)
+        public IActionResult GetByNome(string nome)
         {
             try
             {
@@ -80,7 +82,7 @@ namespace WSTowerApi.Controller
         /// <response code="404">Retorna uma mensagem de erro</response>
         /// <response code="400">Retorna o erro gerado</response>
         /// dominio/api/jogador/id
-        [HttpGet("{IdSelecao}")]
+        [HttpGet("{selecaoId}")]
         public IActionResult GetByIdSelecao(int id)
         {
             try

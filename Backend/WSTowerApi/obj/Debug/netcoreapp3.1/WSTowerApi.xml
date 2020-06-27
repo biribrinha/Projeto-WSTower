@@ -13,7 +13,7 @@
             <response code="400">Retorna o erro gerado</response>
             dominio/api/Jogadores
         </member>
-        <member name="M:WSTowerApi.Controller.JogadorController.GetById(System.String)">
+        <member name="M:WSTowerApi.Controller.JogadorController.GetByNome(System.String)">
             <summary>
             Busca um jogador através do nome
             </summary>
